@@ -1,0 +1,4 @@
+git branch -M main
+git remote add origin https://github.com/VictorAlexandre1986/scripts-javascript.git
+git push -u origin main
+

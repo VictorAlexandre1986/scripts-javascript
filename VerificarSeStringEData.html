@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar se string é data</title>
+    <style>
+        .container {
+            font: normal 25px Arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin:10px
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <label>Conferir se é data: </label>
+        <input type="text" id="valor">
+        <button id="btnConferir">Conferir</button>
+    </div>
+</body>
+
+    <script defer>
+        const valor = document.querySelector('#valor');
+        const btnElement = document.querySelector("#btnConferir");
+
+        function isValidDate(string){
+            const date = new Date(string);
+
+            return !isNaN(date) ? "É uma data" : "Não é uma data"
+        }
+        
+        btnElement.addEventListener('click', ()=>{
+            let result = isValidDate(valor.value);
+            alert(`O resultado da validação ${result}`);
+        })
+    </script>
+</html>
