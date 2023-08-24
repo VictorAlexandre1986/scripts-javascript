@@ -1,0 +1,5 @@
+Já a instrução window.onload é nativa do JavaScript, podemos utilizar ela com jQuery, porém o contrário não acontece, o ready não funciona com JS puro
+
+E ao usar este evento o JavaScript entende que o código abrigado nele deve começar a valer apenas quando todos os elementos da página carregarem
+
+Ou seja, além das tags do HTML, as imagens também deverão já estarem prontas e visíveis

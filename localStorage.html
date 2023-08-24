@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;   
+        }
+
+        .containerPrincipal{
+            width:100vw;
+            height:100vh;
+            background-color: antiquewhite;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .containerSecundario{
+            width:10rem;
+            height:10rem;
+            border: 1px solid coral;
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        .containerSecundario .elementos{
+            margin-top:45%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size:1.3rem;
+            font-family: 'Helvetica';
+        }
+        button{
+            font-size: 1rem;
+            margin-top: 1rem;
+            padding:1rem 1.5rem;
+            cursor:pointer;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="containerPrincipal">
+        <div class="containerSecundario">
+            <div class="elementos">
+                <input type="checkbox" value="Ativo" id="checkbox">
+                <p id="estadoCheckBox"></p>
+            </div>
+        </div>
+        <div class="containerButton">
+            <button type="button" id="btnAlterar">Alterar</button>
+        </div>
+    </div>
+</body>
+<script>
+    let resultado = document.querySelector("#estadoCheckBox");
+    let check = document.querySelector("#checkbox");
+    const btn = document.querySelector("#btnAlterar");
+    
+    let pessoa = {nome: 'Victor', idade: 36}
+    
+    // Transformar o objeto em string e salvar em localStorage
+    localStorage.setItem('pessoa', JSON.stringify(pessoa));
+    // Receber a string
+    let pessoaString = localStorage.getItem('pessoa');
+    // transformar em objeto novamente
+
+
+    btn.addEventListener('click', () => {
+        if(check.checked){
+            resultado.textContent="Checado";
+            let pessoaObj = JSON.parse(pessoaString);
+            alert(`Objeto pessoa armazenado no localStorage ${pessoaObj.nome} ${pessoaObj.idade}`); 
+        }else{
+            resultado.textContent="Não checado";
+        }
+    })
+
+
+</script>
+
+</html>

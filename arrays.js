@@ -85,5 +85,5 @@ console.log(numbersDesc); // [838, 98, 64, 42, 34, 32, 9, 8, 5, 5, 2, 2, 1]
 
 //Transformar uma string em um array
 const texto = "Temos uma string aqui";
-const array = texto.split(" ");
-console.log(array); // ["Temos", "uma", "string", "aqui"]; 
+const array2 = texto.split(" ");
+console.log(array2); // ["Temos", "uma", "string", "aqui"]; 
