@@ -1,0 +1,14 @@
+E agora?
+Há uma solução com HTML e meta tags, você pode marcar a página para não ser gerado cache na mesma
+
+Por meio de uma destas tags:
+
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+Você indica para o navegador não fazer cache da página em questão, resolvendo então o problema de cache do navegador, caso seja esta a sua intenção
+
+Uma outra possibilidade também é realizar o reload da página via JavaScript, para isso utilizamos a seguinte instrução:
+
+window.location.reload(true)
+Desta maneira, se você precisa forçar alguma atualização, poderá recarregar a aba do usuário
