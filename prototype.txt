@@ -1,0 +1,43 @@
+Todo objeto ao ser criado possuirá um protótipo, onde você pode inserir métodos e propriedades
+
+A mesma situação acontece nas classes, você também pode manipular os Prototypes delas
+
+E para que isso serve?
+Você pode pensar em uma herança, estas propriedades e métodos serão passadas aos objetos futuramente criados seguindo os moldes das classes, por exemplo
+
+Veja um exemplo prático:
+
+class Pessoa{}
+Pessoa.prototype.falar = function() {
+    console.log("Olá");
+}
+const pedro = new Pessoa;
+pedro.falar();
+Na classe Pessoa foi adicionado o método falar no seu Prototype, consequentemente a instância pedro de Pessoa, pode utilizar livremente o método falar
+
+E como funciona?
+Primeiramente o interpretador vai buscar o método no objeto atual, se não houver ele vai para o Prototype
+
+Acontece então que podemos substituir livremente o método falar em pedro, isso não afetará o método que veio da classe Pessoa
+
+Veja:
+
+class Pessoa{}
+Pessoa.prototype.falar = function() {
+    console.log("Olá");
+}
+const victor = new Pessoa;
+pedro.falar = function() {
+    console.log("Eu sou o Victor");
+}
+pedro.falar();
+Agora o objeto victor pode utilizar o seu método falar e uma nova instância utilizará o da Prototype até o mesmo ser substituído
+
+E o ES6 deixa os Prototypes obsoletos?
+Com a vinda do ES6 o JavaScript ganhou uma pegada mais orientada a objetos, recursos como Classes e constructor foram adicionados
+
+Então o bom e velho Prototype não precisa mais ser utilizado? Ou não vai mais ser utilizado?
+
+Por mais que a instrução não esteja presente fisicamente no código, toda essa nova sintaxe do JavaScript por baixo dos panos é feita via Prototype
+
+Tornando então o curso ainda muito útil, já que é ele que é executado para criar estruturas como herança, por exemplo

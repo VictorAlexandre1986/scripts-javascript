@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;   
+        }
+
+        .containerPrincipal{
+            width:100vw;
+            height:100vh;
+            background-color: antiquewhite;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .containerSecundario{
+            width:10rem;
+            height:10rem;
+            border: 1px solid coral;
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        .containerSecundario .elementos{
+            margin:1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-size:1.3rem;
+            font-family: 'Helvetica';
+        }
+        button{
+            font-size: 1rem;
+            margin-top: 1rem;
+            padding:1rem 1.5rem;
+            cursor:pointer;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+        }
+
+        h3{
+            text-align: center;
+        }
+
+        textarea{
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="containerPrincipal">
+        <div class="containerSecundario">
+            <div class="elementos">
+                <h4>Clipboard</h4>
+                <textarea id="texto"></textarea>
+                <p id="estadoCheckBox"></p>
+            </div>
+        </div>
+        <div class="containerButton">
+            <button type="button" id="btnCopiar">Copiar</button>
+        </div>
+    </div>
+</body>
+<script>
+    
+    let text = document.querySelector("#texto");
+    const btn = document.querySelector("#btnCopiar");
+
+
+    btn.addEventListener('click', () => {
+        if(text.value==""){
+            alert("Por favor preencha o textarea")
+        }else{
+            text.select();
+            document.execCommand('copy');
+            alert("Copiado.")
+        }
+    })
+
+</script>
+
+</html>

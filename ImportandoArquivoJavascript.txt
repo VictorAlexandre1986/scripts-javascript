@@ -1,0 +1,51 @@
+Como utilizar o export e o import
+No ES6 temos funcionalidades que auxiliam a exportação e importação de conteúdos JavaScript
+
+Veja na prática:
+
+// arquivo teste.js
+export function testandoImport() {
+  console.log('olá');
+}
+E agora para importar:
+
+// arquivo app.js
+import { testandoImport } from './teste.js'
+testandoImport();
+E para utilizar esta estrutura você precisa de um arquivo package.json com o seguinte conteúdo:
+
+{
+  "type": "module"
+}
+Fazendo com que os seus arquivos sejam identificados como módulos
+
+E pronto, você realizou a exportação e importação
+
+Como utilizar o export e require
+Os módulos do ES6, como são conhecidos, são amplamente utilizados em Node.js
+
+Consistem basicamente em exportar uma funcionalidade de um arquivo e posteriormente importar as mesmas em outro
+
+Veja um exemplo na prática:
+
+// arquivo teste.js
+function testandoImport() {
+  console.log('olá');
+}
+module.exports = {
+  testandoImport: testandoImport,
+};
+No arquivo teste.js estamos utilizando o module.exports para exportar a função testandoImport
+
+Essa é a forma que temos para externalizar algo que contém no arquivo que queremos importar
+
+Agora vejamos a importação:
+
+// arquivo app.js
+const teste = require('./teste');
+teste.testandoImport();
+Dessa forma, no arquivo app.js temos acesso a função testandoImport, tudo isso por causa da instrução require, que é a que importa os recursos de um arquivo JavaScript em outro
+
+Muito cuidado com as funcionalidades do ES6: elas não são suportadas por todos os navegadores, faça uma pesquisa antes de sair utilizando estes recursos
+
+Como dito antes o module.exports e o require são recursos do ES6
