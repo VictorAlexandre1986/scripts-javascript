@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const camera = document.querySelector('#camera');
+
+        navigator.mediaDevices.getUserMedia({video:true})
+            .then((stream) => {
+                camera.srcObject = stream;
+            })
+    </script>
+</head>
+<body>
+    <video id="camera" autoplay></video>
+    
+</body>
+</html>
