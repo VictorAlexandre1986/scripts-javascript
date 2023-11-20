@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Atributo data em HTML5</title>
+</head>
+<body>
+  <div id="meuElemento" data-info="Este é um exemplo de atributo data">
+    Clique para ver o atributo data
+  </div>
+
+  <script>
+    const meuElemento = document.getElementById('meuElemento');
+    const info = meuElemento.dataset.info;
+    meuElemento.addEventListener('click',()=>{
+        alert(info);
+    });
+
+    alert(info); // Isso exibirá um alerta com o valor do atributo data "info"
+  </script>
+</body>
+</html>
