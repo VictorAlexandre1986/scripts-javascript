@@ -1,0 +1,1 @@
+console.log( true ? 'Exibir se for true' : 'Exibir se for false')

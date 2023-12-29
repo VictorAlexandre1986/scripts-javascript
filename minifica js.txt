@@ -1,0 +1,26 @@
+Pontos positivos de minificar arquivo
+Os ganhos de minificar arquivo são nítidos, o arquivo fica menor e consequentemente é lido mais rápido
+
+Fazendo com que o código seja interpretado pela máquina do cliente antes do que se ele não fosse minificado, melhorando a experiência de quem acessa o site
+
+Porém, é claro, isso é diretamente proporcional ao tamanho do arquivo, caso seja muito pequeno não haverá diferença
+
+Pontos negativos de minificar arquivo
+O grande problema é o debug de código, que vai ficar pior para ser feito no navegador, já que toda as instruções serão compressadas em uma grande
+
+Além disso é bom que esta minificação seja feita por uma ferramenta, e não esteja no código de desenvolvimento
+
+Se não o desenvolvedor precisará desminificar para alterar o código, conseguindo assim ter uma visão melhor do mesmo
+
+Já se o minify é feito após o desenvolvimento, não há este problema
+
+Qual o melhor minificador?
+A ideia é que nem todos os softwares que executam esta função devem ser cegamente confiados
+
+Opte por ferramentas que já foram testadas previamente
+
+Aqui vai uma lista de ferramentas consolidadas:
+
+UglifyJs
+JSMin
+JavaScript Minifier
