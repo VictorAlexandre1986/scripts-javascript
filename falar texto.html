@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const texto = "Olá! Eu sou um exemplo de síntese de fala em JavaScript.";
+
+    // Verifica se o navegador suporta a API de Síntese de Fala
+    if ('speechSynthesis' in window) {
+        // Cria um objeto SpeechSynthesisUtterance com o texto desejado
+        const utterance = new SpeechSynthesisUtterance(texto);
+    
+        // Define o idioma para português (Brasil)
+        utterance.lang = 'pt-BR';
+
+        // Fala o texto
+        window.speechSynthesis.speak(utterance);
+    } else {
+      console.error("Desculpe, seu navegador não suporta a API de Síntese de Fala.");
+    }
+</script>
+</html>
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reconhecimento de Fala</title>
+</head>
+<body>
+
+  <h1>Fale algo no microfone:</h1>
+  <p id="output-text"></p>
+
+  <script>
+    // Verifica se o navegador suporta a API de Reconhecimento de Fala
+    if ('webkitSpeechRecognition' in window) {
+      const recognition = new webkitSpeechRecognition();
+
+      // Configurações opcionais
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      recognition.onresult = function(event) {
+        // Obtém o texto reconhecido
+        const resultado = event.results[0][0].transcript;
+        
+        // Exibe o texto na página
+        document.getElementById('output-text').innerText = resultado;
+      };
+
+      recognition.onerror = function(event) {
+        console.error('Erro de reconhecimento:', event.error);
+      };
+
+      recognition.onend = function() {
+        console.log('Fim do reconhecimento de fala.');
+      };
+
+      // Inicia o reconhecimento quando a página carrega
+      recognition.start();
+    } else {
+      document.getElementById('output-text').innerText = 'Desculpe, seu navegador não suporta a API de Reconhecimento de Fala.';
+    }
+  </script>
+
+</body>
+</html>
